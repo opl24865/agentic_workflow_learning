@@ -1,0 +1,1 @@
+RAG 是 Retrieval-Augmented Generation，透過外部知識檢索補充 LLM 回答。

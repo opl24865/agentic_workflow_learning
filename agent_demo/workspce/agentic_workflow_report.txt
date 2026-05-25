@@ -1,0 +1,6 @@
+# Agentic Workflow 相關資料與概念
+
+    ## 內容摘要
+
+    Agentic Workflow 是結合 LLM 規劃能力、工具使用與多步驟執行的工作流程。它通常包含 Planner、Executor、Tool Calling、Memory 等元件。
+    
