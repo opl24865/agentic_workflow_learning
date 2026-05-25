@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agentic Workflow Demo</title>
+</head>
+<body>
+  <h1>Agentic Workflow Demo</h1>
+
+  <textarea id="message" rows="4" cols="80"></textarea>
+  <br />
+  <button onclick="sendMessage()">送出</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    async function sendMessage() {
+      const message = document.getElementById("message").value;
+      const output = document.getElementById("output");
+
+      output.textContent = "執行中...";
+
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await res.json();
+      output.textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>

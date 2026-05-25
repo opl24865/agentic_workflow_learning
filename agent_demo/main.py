@@ -41,8 +41,18 @@ def agentic_main():
         base_agent
     )
 
-    user_input = input("User: ")
-    result = Workflow_agent.run(user_input)
+    while True:
+        user_input = input("User: ")
+        if user_input.lower() in ["exit", "quit", "q"]:
+            print("Bye!")
+            break
+        if not user_input:
+            continue
+        try:
+            result = Workflow_agent.run(user_input)
+        except Exception as e:
+            print(f"\n發生錯誤：{e}")
+
     # print(result)
 
 if __name__ == "__main__":
